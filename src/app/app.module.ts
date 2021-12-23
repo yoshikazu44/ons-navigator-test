@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';''
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';''
 
 import { OnsenModule } from 'ngx-onsenui';
+import * as ons from 'onsenui';
+
 import { AppComponent } from './app.component';
 import { DefaultPageComponent } from './default-page/default-page.component';
 import { PageComponent } from './page/page.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,21 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     DefaultPageComponent,
     PageComponent
   ],
+  entryComponents: [
+    DefaultPageComponent,
+    PageComponent
+  ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     OnsenModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    ons.disableAutoStyling();
+  }
+}

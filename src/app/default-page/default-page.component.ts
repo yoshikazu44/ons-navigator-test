@@ -4,7 +4,7 @@ import { OnsNavigator, Params } from 'ngx-onsenui';
 
 import { PageComponent } from '../page/page.component';
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[default-page]',
   templateUrl: './default-page.component.html',
   styleUrls: ['./default-page.component.css']
 })
@@ -17,16 +17,16 @@ export class DefaultPageComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log('DefaultPage ngOnInit');
-    console.log(this._navigator.element);
-    console.log(Object.keys(this._navigator.element));
-    this._navigator.element.addEventListener("prepush", function(e) {
-      console.log("event prepush");
-      console.log(e);
-    })
-    this._navigator.element.addEventListener("prepop", function(e) {
-      console.log("event prepop");
-      console.log(e);
-    })
+    // console.log(this._navigator.element);
+    // console.log(Object.keys(this._navigator.element));
+    // this._navigator.element.addEventListener("prepush", function(e) {
+    //   console.log("event prepush");
+    //   console.log(e);
+    // })
+    // this._navigator.element.addEventListener("prepop", function(e) {
+    //   console.log("event prepop");
+    //   console.log(e);
+    // })
   }
 
   ngOnChanges(changes: SimpleChanges): void {

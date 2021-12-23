@@ -3,7 +3,7 @@ import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { OnsNavigator, Params } from 'ngx-onsenui';
 
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[page]',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
